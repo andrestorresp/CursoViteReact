@@ -7,4 +7,6 @@ function Titulo() {
   return <p>hola mundo</p>;
 }
 
+//componente
+
 export default Titulo;
