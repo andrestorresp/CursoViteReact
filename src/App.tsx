@@ -1,14 +1,20 @@
-import Card, { CardBody } from "./components/Card";
-import List from "./components/List";
+import { useEffect, useState } from "react";
 
-function App() {
-  const list = ["andres", "alfonzo", "torres"];
+const CAT_ENDPOINT_RANDOM_FACT = `https://catfact.ninja/fact`;
+
+export function App() {
+  const [fact, setFact] = useState();
+
+  useEffect(() => {
+    fetch(CAT_ENDPOINT_RANDOM_FACT)
+      .then((res) => res.json())
+      .then((data) => setFact(data.fact));
+  }, []);
   return (
-    <Card>
-      <CardBody title="holamundo" text="este es el texto" />
-      <List data={list} />
-    </Card>
+    <>
+      <h1>app de gatos</h1>
+      <p>{fact}</p>
+    </>
   );
 }
-
 export default App;
