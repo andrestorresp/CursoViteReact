@@ -1,0 +1,64 @@
+.sidebar {
+  /* Ocupará el 100% del alto de la pantalla */
+  height: 100vh;
+  /* Un ancho fijo y delgado, por ejemplo 80px */
+  width: 80px;
+  
+  /* Posición sticky asegura que el menú se quede en su sitio si haces scroll hacia abajo */
+  position: sticky;
+  top: 0;
+  
+  /* Usamos flexbox para organizar los elementos (icono y enlaces) en una columna */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  padding: 2rem 0; /* Espaciado arriba y abajo */
+  
+  /* Opcional: un color de fondo claro y un borde para diferenciarlo */
+  background-color: #f8f9fa;
+  border-right: 1px solid #eaeaea;
+}
+
+.sidebar-icon {
+  font-size: 1.5rem;
+  margin-bottom: 4rem; /* Separación grande entre el logo y los enlaces */
+  color: #333;
+}
+
+.sidebar-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-nav ul {
+  list-style: none; /* Quita los puntitos redondos por defecto de las listas HTML */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Apila los enlaces uno debajo del otro */
+  align-items: center;
+  gap: 6rem; /* Crea un espacio grande entre cada enlace */
+}
+
+/* Aquí viene la magia para poner el texto de lado */
+.sidebar-nav li {
+  /* Rotamos el texto 90 grados hacia la izquierda */
+  transform: rotate(-90deg);
+  white-space: nowrap; /* Evita que el texto se rompa en dos líneas si es muy largo */
+}
+
+.sidebar-nav a {
+  text-decoration: none; /* Quita el subrayado típico de los enlaces azules */
+  color: #888; /* Color grisáceo por defecto */
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px; /* Espacio entre las letras para verse más elegante */
+  transition: color 0.3s ease; /* Efecto suave al cambiar de color */
+}
+
+/* Cuando pasamos el ratón (hover) o cuando es la clase 'active' */
+.sidebar-nav a:hover,
+.sidebar-nav li.active a {
+  color: #000; /* Se vuelve negro fuerte */
+  font-weight: 700;
+}

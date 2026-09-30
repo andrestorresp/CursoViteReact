@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
-
-const CAT_ENDPOINT_RANDOM_FACT = `https://catfact.ninja/fact`;
+import "./App.css";
+import { Sidebar } from "./components/sidebar";
 
 export function App() {
-  const [fact, setFact] = useState();
-
-  useEffect(() => {
-    fetch(CAT_ENDPOINT_RANDOM_FACT)
-      .then((res) => res.json())
-      .then((data) => setFact(data.fact));
-  }, []);
   return (
-    <>
-      <h1>app de gatos</h1>
-      <p>{fact}</p>
-    </>
+    <div className="portfolio-layout">
+      {/* menu lateral izquierda */}
+      <Sidebar />
+
+      {/* Contenedor principal de la derecha */}
+      <main className="main-content">
+        <h1>Aquí irá nuestro Mosaico pronto...</h1>
+      </main>
+    </div>
   );
 }
+
 export default App;

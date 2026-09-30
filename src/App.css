@@ -1,0 +1,30 @@
+/* Reseteamos los márgenes por defecto para que no haya espacios blancos alrededor */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Usamos una fuente moderna por defecto (opcional, puedes cambiarla después) */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f0f0f0; /* Un gris muy clarito de fondo general */
+}
+
+.portfolio-layout {
+  /* Flexbox es la clave aquí: pone el menú a la izquierda y el contenido a la derecha */
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  /* flex-grow: 1 hace que tome todo el espacio sobrante de la pantalla que no usa el Sidebar */
+  flex-grow: 1;
+  padding: 2rem 4rem; /* Espaciado interno para que no quede pegado a los bordes */
+  
+  /* Centrado temporal para el texto de prueba */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
